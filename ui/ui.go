@@ -2,11 +2,12 @@ package ui
 
 import (
 	"bufio"
+	"fmt"
 	"os"
 	"todolist/lib"
 	"todolist/ui/cli"
-	"todolist/ui/tui"
-	"todolist/ui/web"
+	// "todolist/ui/tui"
+	// "todolist/ui/web"
 )
 
 type UIMode string
@@ -23,10 +24,12 @@ func Start(uiMode UIMode, reader *bufio.Reader, todos *[]*lib.Todo, todoFile *os
 		cli.LaunchCLI(reader, todos, todoFile)
 		break
 	case TUI:
-		tui.LaunchTUI()
+		fmt.Println("This mode is unfinished! Come back later!")
+		// tui.LaunchTUI()
 		break
 	case WEB:
-		web.LaunchWebUI()
+		fmt.Println("This mode is unfinished! Come back later!")
+		// web.LaunchWebUI()
 		break
 	default:
 		panic("Invalid UI mode")
