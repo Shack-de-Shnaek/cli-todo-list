@@ -30,6 +30,7 @@ func LaunchCLI(reader *bufio.Reader, todos *[]*lib.Todo, todoFile *os.File) {
 			fmt.Println("Something went wrong")	
 			break
 		}
+		fmt.Println("")
 
 		switch strings.Trim(command, " \n") {
 		case "list":
@@ -72,6 +73,8 @@ func LaunchCLI(reader *bufio.Reader, todos *[]*lib.Todo, todoFile *os.File) {
 			fmt.Println("The todo has been deleted!")
 			lib.StoreTodosJSON(todoFile, todos)
 			break
+		default:
+			fmt.Println("Invalid command! Available commands are: list, add, delete")
 		}
 	}
 }

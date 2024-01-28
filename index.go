@@ -35,7 +35,11 @@ You must provide an argument for what UI mode to use. Available options are:
 		return
 	}
 
-	todoFile, _ := os.OpenFile("todos.json", os.O_RDWR, 0777)
+	todoFile, err := lib.GetTodosFile()
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
 
 	todos := []*lib.Todo{}
 	if loadedTodos, err := lib.LoadTodosJSON(todoFile); err == nil {
