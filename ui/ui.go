@@ -6,8 +6,6 @@ import (
 	"os"
 	"todolist/lib"
 	"todolist/ui/cli"
-	// "todolist/ui/tui"
-	// "todolist/ui/web"
 )
 
 type UIMode string
